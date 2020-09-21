@@ -43,9 +43,16 @@ export class TodoComponent {
   onSubmit(f: NgForm ){
     this.arr = f.value;
     // tslint:disable-next-line: no-string-literal
-    const todo = this.arr['taskName'];
+    const todo = { titulo: this.arr['taskName'], estado: 0 };
 
-    this.todo.push({ title: todo});
+    this.todo.push({ title: todo.titulo});
+
+    this.tareasService.crearTarea( todo ).subscribe(
+      resp => {
+        console.log(resp);
+      }
+    );
+
   }
 
   // tslint:disable-next-line: typedef

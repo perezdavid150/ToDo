@@ -16,4 +16,10 @@ export class TareasService {
 
   }
 
+  actualizarTarea( tarea ){
+
+    return this.http.put(`${ this.url }/tareas/${ tarea.id }.json`, tarea);
+
+  }
+
 }
