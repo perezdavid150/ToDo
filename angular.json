@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "todo-firebase"
+    }
+  },
+  "defaultProject": "todo-firebase",
+  "cli": {
+    "analytics": "94ca8515-191f-4ae9-a544-f95eab78f8cf"
+  }
 }
