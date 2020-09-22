@@ -40,14 +40,14 @@ export class TodoComponent {
 
 
   // tslint:disable-next-line: typedef
-  onSubmit(f: NgForm ){
+  async onSubmit(f: NgForm ){
     this.arr = f.value;
     // tslint:disable-next-line: no-string-literal
     const todo = { titulo: this.arr['taskName'], estado: 0 };
 
     this.todo.push({ title: todo.titulo});
 
-    this.tareasService.crearTarea( todo ).subscribe(
+    await this.tareasService.crearTarea( todo ).subscribe(
       resp => {
         console.log(resp);
       }
